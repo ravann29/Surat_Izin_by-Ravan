@@ -1,0 +1,78 @@
+body {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: white;
+  padding: 2cm;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12pt;
+  line-height: 1.5;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+  width: 90vw;
+  max-width: 21cm;
+  height: auto;
+  max-height: 29.7cm;
+}
+
+h2 {
+  text-align: center;
+}
+
+.dashed-line {
+  border-bottom: 1px dashed black;
+}
+
+.align-right {
+  text-align: right;
+}
+
+/* Styling untuk tombol Print di luar kertas */
+.print-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  z-index: 999; /* Pastikan tombol tetap di atas konten */
+}
+
+.print-btn:hover {
+  background-color: #45a049;
+}
+
+/* Pengaturan layout untuk area cetak (A4) */
+@page {
+  size: A4;
+  margin: 20mm;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 210mm; /* Lebar A4 */
+  max-height: 297mm; /* Tinggi A4 */
+  margin: auto;
+  padding: 10mm;
+  background: white;
+  box-sizing: border-box;
+}
+
+@media print {
+  /* Menyembunyikan tombol print saat pencetakan */
+  .print-btn {
+    display: none;
+  }
+}
